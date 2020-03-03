@@ -1,0 +1,10 @@
+/Users/williamweir/Desktop/Swinburne/Challenges/TicTacToe/bin/Debug/netcoreapp3.1/TicTacToe.deps.json
+/Users/williamweir/Desktop/Swinburne/Challenges/TicTacToe/bin/Debug/netcoreapp3.1/TicTacToe.runtimeconfig.json
+/Users/williamweir/Desktop/Swinburne/Challenges/TicTacToe/bin/Debug/netcoreapp3.1/TicTacToe.runtimeconfig.dev.json
+/Users/williamweir/Desktop/Swinburne/Challenges/TicTacToe/bin/Debug/netcoreapp3.1/TicTacToe.dll
+/Users/williamweir/Desktop/Swinburne/Challenges/TicTacToe/bin/Debug/netcoreapp3.1/TicTacToe.pdb
+/Users/williamweir/Desktop/Swinburne/Challenges/TicTacToe/obj/Debug/netcoreapp3.1/TicTacToe.csprojAssemblyReference.cache
+/Users/williamweir/Desktop/Swinburne/Challenges/TicTacToe/obj/Debug/netcoreapp3.1/TicTacToe.AssemblyInfoInputs.cache
+/Users/williamweir/Desktop/Swinburne/Challenges/TicTacToe/obj/Debug/netcoreapp3.1/TicTacToe.AssemblyInfo.cs
+/Users/williamweir/Desktop/Swinburne/Challenges/TicTacToe/obj/Debug/netcoreapp3.1/TicTacToe.dll
+/Users/williamweir/Desktop/Swinburne/Challenges/TicTacToe/obj/Debug/netcoreapp3.1/TicTacToe.pdb

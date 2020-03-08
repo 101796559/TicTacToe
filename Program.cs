@@ -2,29 +2,29 @@
 
 namespace TicTacToe
 {
-    class Program
-    {
-        static string[] choices = { "1", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+    class Program {
+        static string[] choices = { "filler", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         static int player = 1;
         static string mark;
-        static int choice = 0;
-        static bool validSelection = false;
+        static int choice;
+        static bool validSelection;
         static Random random = new Random();
         static int over;
 
-        static void Main(string[] args)
-        {
+        public static void Main(string[] args) {
             Console.Clear();
             new Program().RunGame();    
         }
-        void RunGame() {
+
+        public void RunGame() {
+            // Welcome player to game
+
             // Determine opponent (physical multiplayer or 'ai')
-            System.Console.WriteLine("Choose your opponent:\n1. Live Multiplay\n2. AI");
+            System.Console.WriteLine("Choose your opponent:\n1. Live Multiplayer\n2. AI");
             int opponent = int.Parse(Console.ReadLine());
 
-            int next = 1;
-            while (next == 1) {
-
+            int playAgain = 1;
+            while (playAgain == 1) {
                 // Reset Game Board
                 for (int x = 0; x <=9; x++) {
                     choices[x] = Convert.ToString(x);
@@ -33,9 +33,9 @@ namespace TicTacToe
                 // Overwrite previous game result
                 over = 0;
 
-                // While the game not over
+                // While game not over (1 == win/loss, -1 == draw)
                 while (over == 0) {
-                    // Overwrite previous selection
+                    // Overwrite previous selections
                     validSelection = false;
 
                     // Refresh console and check win condition
@@ -51,7 +51,7 @@ namespace TicTacToe
                         mark = "O"; 
                     }
 
-                    System.Console.WriteLine("Player {0}\n", mark);
+                    System.Console.WriteLine("Player {0}: {1}\n", player, mark);
 
                     ShowBoard();
                     if (player == 1 && over == 0) {   
@@ -89,20 +89,18 @@ namespace TicTacToe
                     System.Console.WriteLine("\nPlayer {0} wins!", player);
                 }
                 System.Console.WriteLine("\nWould you like to play again?\n1. Yes\n2. No");
-                next = int.Parse(Console.ReadLine());
+                playAgain = int.Parse(Console.ReadLine());
             }
         }
 
-        void ShowBoard()
-        {
+        private void ShowBoard() {
             System.Console.WriteLine(" {0} | {1} | {2} ", choices[1], choices[2], choices[3]);
             System.Console.WriteLine("---|---|---");
             System.Console.WriteLine(" {0} | {1} | {2} ", choices[4], choices[5], choices[6]);
             System.Console.WriteLine("---|---|---");
             System.Console.WriteLine(" {0} | {1} | {2} ", choices[7], choices[8], choices[9]);
         }
-        void PlayerSelection()
-        {
+        private void PlayerSelection() {
             while (!validSelection) {
                 System.Console.Write("\nChoose a position: ");
                 choice = Convert.ToInt32(Console.ReadLine());
@@ -112,7 +110,7 @@ namespace TicTacToe
             choices[choice] = mark;
             player++;
         }
-        void AiSelection() {
+        private void AiSelection() {
             while (!validSelection) {
                 // Horizontal
                 // Row 1 AI
@@ -284,7 +282,7 @@ namespace TicTacToe
                     choice = 3;
                 }
 
-                // If no immediate winning move condition
+                // If no immediate winning move
                 else {
                     if (choices[5] == "5"){
                         choice = 5;
@@ -292,26 +290,22 @@ namespace TicTacToe
                     else {
                         choice = random.Next(1,9);
                     }
-                    System.Console.WriteLine(choice);
                 } 
                 validSelection = IsValidSelection(choice);
             }
             choices[choice] = mark;   
             player++;
         }
-        bool IsValidSelection(int choice) {
+        private bool IsValidSelection(int choice) {
             if (choice != 0 && choices[choice] == Convert.ToString(choice)) {
-                System.Console.WriteLine("True");
                 return true;
             }
             else {
-                System.Console.WriteLine("False");
                 return false;
             }
         }
 
-        int CheckWinCondition()
-        {
+        private int CheckWinCondition() {
             // Horizontal
             if (choices[1] == choices[2] && choices[2] == choices[3]) {
                 return 1;
@@ -349,7 +343,6 @@ namespace TicTacToe
             else {
                 return 0;
             }
-
         }
     }
 }
